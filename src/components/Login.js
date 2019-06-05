@@ -1,7 +1,9 @@
 import React from "react";
 import logo from "../logo.svg";
+import { AuthContext } from "../App";
 
 export const Login = () => {
+  const { dispatch } = React.useContext(AuthContext);
   const initialState = {
     email: "",
     password: "",
@@ -22,32 +24,36 @@ export const Login = () => {
     event.preventDefault();
     setData({
       ...data,
-      isSubmitting: true
+      isSubmitting: true,
+      errorMessage: null
     });
     fetch("http://localhost:8000/api/login", {
       method: "post",
-      body: {
-        email: data.email,
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        username: data.email,
         password: data.password
-      }
+      })
     })
       .then(res => {
         if (res.ok) {
-          return res;
+          return res.json();
         }
         throw res;
       })
       .then(resJson => {
-        setData({
-          ...data,
-          isSubmitting: false
-        });
+        dispatch({
+            type: "LOGIN",
+            payload: resJson
+        })
       })
       .catch(error => {
         setData({
           ...data,
           isSubmitting: false,
-          errorMessage: error.message
+          errorMessage: error.message || error.statusText
         });
       });
   };
@@ -81,7 +87,9 @@ export const Login = () => {
               />
             </label>
 
-            {data.errorMessage && <span className="form-error">{data.errorMessage}</span>}
+            {data.errorMessage && (
+              <span className="form-error">{data.errorMessage}</span>
+            )}
 
             <button disabled={data.isSubmitting}>
               {data.isSubmitting ? (

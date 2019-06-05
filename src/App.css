@@ -3,11 +3,12 @@
   display: flex;
   align-items: center;
   background-image: url("./assets/carry-on-colour.svg");
-  height: 100vh;
+  height: calc(100vh - 70px);
   background-repeat: no-repeat;
   background-position: right;
   padding-left: 5%;
   padding-right: 5%;
+  margin-top: 70px;
 }
 
 .card {
@@ -128,14 +129,15 @@ label{
 
 #navigation{
   width: 100%;
-  position: sticky;
+  position: fixed;
   z-index: 10;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   background-color: #F42B4B;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-
+  height: 70px;
+  top: 0;
 }
 
 #navigation ul{

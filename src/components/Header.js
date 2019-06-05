@@ -2,7 +2,7 @@ import React from "react";
 import { AuthContext } from "../App";
 
 export const Header = () => {
-  const { dispatch } = React.useContext(AuthContext);
+  const { state, dispatch } = React.useContext(AuthContext);
   return (
     <nav id="navigation">
       <h1 href="#" className="logo">
@@ -15,7 +15,9 @@ export const Header = () => {
           })
         }
       >
-        <h1 href="#">LOGOUT</h1>
+        {state.isAuthenticated && (
+          <h1>Hi {state.user.firstName} (LOGOUT)</h1>
+        )}
       </button>
     </nav>
   );
