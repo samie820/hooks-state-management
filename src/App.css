@@ -1,29 +1,91 @@
-.App {
-  text-align: center;
+/******  LOGIN PAGE  ******/
+.login-container{
+  display: flex;
+  align-items: center;
+  background-image: url("./assets/carry-on-colour.svg");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: right;
+  padding-left: 5%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  height: 70%;
+  width: 45%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.login-container .container {
+  padding-left: 7%;
+  padding-right: 7%;
+  height: 100%;
+}
+
+.login-container .container h1{
+  font-size: 2.5rem;
+}
+
+.login-container .container form{
+  display: flex;
+  height: 80%;
+  flex-direction: column;
+  justify-content: space-around;
+  align-self: center;
+}
+
+input[type="text"], input[type="password"]{
+  padding-left: 1px;
+  padding-right: 1px;
+  height: 40px;
+  border-radius: 5px;
+  border: .5px solid rgb(143, 143, 143);
+  font-size: 15px;
+}
+
+label{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.login-container button{
+  height: 40px;
+  font-weight: bold;
+  font-size: 15px;
+  background-color: #F42B4B;
+  color: rgb(255, 255, 255);
 }
 
-@keyframes App-logo-spin {
+.login-container button:hover{
+  background-color: rgb(151, 25, 46);
+  cursor: pointer;
+}
+
+
+.login-container button:focus{
+  outline: none !important;
+}
+
+
+
+.spinner {
+  animation: spinner infinite .9s linear;
+  height: 90%;
+}
+
+.spinner:focus{
+  border:none;
+}
+
+
+@keyframes spinner {
   from {
     transform: rotate(0deg);
   }
@@ -31,3 +93,17 @@
     transform: rotate(360deg);
   }
 }
+
+.form-error{
+  color: #F42B4B;
+  text-align: center;
+}
+
+
+
+/******  LOGIN PAGE  ******/
+
+
+/******  HOME PAGE  ******/
+
+/******  HOME PAGE  ******/
