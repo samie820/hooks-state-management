@@ -7,6 +7,7 @@
   background-repeat: no-repeat;
   background-position: right;
   padding-left: 5%;
+  padding-right: 5%;
 }
 
 .card {
@@ -99,9 +100,74 @@ label{
   text-align: center;
 }
 
+@media screen and (max-width: 700px){
+  .login-container{
+    justify-content: center;
+    background-image: none;
+  }
+  .card {
+    width: 80%;
+    align-self: center;
+  }
+  
+}
+
+@media screen and (max-width: 350px){
+  .card {
+    width: 100%;
+  }
+  
+}
 
 
 /******  LOGIN PAGE  ******/
+
+
+
+/******  HEADER  ******/
+
+#navigation{
+  width: 100%;
+  position: sticky;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #F42B4B;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+}
+
+#navigation ul{
+  list-style: none;
+  display: flex;
+}
+
+a{
+  text-decoration: none;
+}
+
+#navigation h1{
+  color: white;
+}
+
+#navigation button{
+  background-color: transparent;
+  border: none;
+}
+
+#navigation button:hover{
+  cursor: pointer;
+}
+
+#navigation button:focus{
+  outline: none !important;
+}
+
+
+/******  HEADER  ******/
+
+
 
 
 /******  HOME PAGE  ******/
