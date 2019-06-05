@@ -1,5 +1,9 @@
+![Hooks State management App logo](/screenshots/login-page.png?raw=true "NTI Mobile App logo")
+
+
 # Hooks State management App
 This is the demo application to show a state management pattern in React with hooks!!!
+
 
 # Getting Started
 These instructions should get you a copy of the project up and running on your local machine for development and testing purposes.
