@@ -1,6 +1,7 @@
 import React from "react";
 
 export const Card = ({ song }) => {
+    
   return (
     <div className="card">
       <img
