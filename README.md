@@ -1,4 +1,5 @@
-![Hooks State management App logo](/screenshots/login-page.png?raw=true "NTI Mobile App logo")
+![Hooks State management App logo](/screenshots/login-page.png?raw=true "Login page for the app")
+![Hooks State management App logo](/screenshots/home-page.png?raw=true "Home page for the app")
 
 
 # Hooks State management App
