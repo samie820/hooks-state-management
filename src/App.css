@@ -182,6 +182,21 @@ a{
   justify-content: space-between;
 }
 
+.home .loader{
+  align-self: center;
+  width: 100%;
+  text-align: center;
+}
+
+.home .error{
+  width: 100%;
+  align-self: center;
+  color: #F42B4B;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
 .home>.card {
   /* Add shadows to create the "card" effect */
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -214,8 +229,15 @@ a{
   align-items: center;
   height: 35%;
   padding-bottom: 5px;
+  transition: 0.5s;
 }
 
+
+.home .content:hover{
+  background-color: rgba(255, 255, 255, 1);
+  height: 50%;
+  cursor: pointer;
+}
 
 
 .content>h2{

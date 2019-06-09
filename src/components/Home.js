@@ -25,7 +25,8 @@ const reducer = (state, action) => {
     case "FETCH_SONGS_FAILURE":
       return {
         ...state,
-        hasError: true
+        hasError: true,
+        isFetching: false
       };
     default:
       return state;
@@ -40,7 +41,7 @@ export const Home = () => {
     dispatch({
       type: "FETCH_SONGS_REQUEST"
     });
-    fetch("http://localhost:8000/api/songs", {
+    fetch("https://hookedbe.herokuapp.com/api/songs", {
       headers: {
         Authorization: `Bearer ${authState.token}`
       }
@@ -69,9 +70,18 @@ export const Home = () => {
 
   return (
     <div className="home">
-      {state.isFetching && <span>LOADING...</span>}
-      {state.hasError && <span>AN ERROR HAS OCCURED</span>}
-      {state.songs.length > 0 && state.songs.map(song => <Card key={song.id.toString()} song={song} />)}
+      {state.isFetching ? (
+        <span className="loader">LOADING...</span>
+      ) : state.hasError ? (
+        <span className="error">AN ERROR HAS OCCURED</span>
+      ) : (
+        <>
+          {state.songs.length > 0 &&
+            state.songs.map(song => (
+              <Card key={song.id.toString()} song={song} />
+            ))}
+        </>
+      )}
     </div>
   );
 };
