@@ -3,7 +3,10 @@
 
 
 # Hooks State management App
-This is the demo application to show a state management pattern in React with hooks!!!
+This is the demo application to show a state management pattern in React with hooks!!! Check out the live version on Netlify [here](https://eager-boyd-b557ed.netlify.com/)
+
+Email: admin,
+Password: password
 
 
 # Getting Started
