@@ -178,7 +178,20 @@ label{
 }
 
 .toggle-button{
+  width: 200px;
+  text-align: center;
+  justify-content: center;
+  height: 50px;
+  border: none;
+  background-color: #F42B4B;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
 
+.toggle-button:hover{
+  cursor: pointer;
+  background-color: rgb(189, 1, 32);
 }
 
 .home .loader{
@@ -259,6 +272,8 @@ label{
     width: 90%;
   }
 }
+
+
 /******  HOME PAGE  ******/
 
 
@@ -389,10 +404,6 @@ div.modal-form-inputs label {
 
 .pull-right {
   float: right !important;
-}
-
-#centered-toggle-button {
-  position: absolute;
 }
 
 /*******  MODAL  *******/
