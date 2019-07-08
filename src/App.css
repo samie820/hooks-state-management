@@ -273,6 +273,16 @@ label{
   }
 }
 
+@media screen and (min-width: 1400px){
+  .home {
+    margin: auto;
+    width: 1400px;
+  }
+  .toggle-button{
+    margin-bottom: 10px;
+  }
+}
+
 
 /******  HOME PAGE  ******/
 
