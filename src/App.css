@@ -138,16 +138,10 @@ label{
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   height: 70px;
   top: 0;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
-#navigation ul{
-  list-style: none;
-  display: flex;
-}
-
-a{
-  text-decoration: none;
-}
 
 #navigation h1{
   color: white;
@@ -156,6 +150,7 @@ a{
 #navigation button{
   background-color: transparent;
   border: none;
+  align-self: center;
 }
 
 #navigation button:hover{
@@ -173,13 +168,17 @@ a{
 
 
 /******  HOME PAGE  ******/
-.home{
+.home, .toggle-button{
   margin-top: 100px;
   margin-left: 2%;
   margin-right: 2%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.toggle-button{
+
 }
 
 .home .loader{
@@ -261,3 +260,139 @@ a{
   }
 }
 /******  HOME PAGE  ******/
+
+
+/*******  MODAL  *******/
+
+.modal {
+  background: rgba(0,0,0,0.1);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+.modal.off {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-table-container {
+  display: table;
+  height: 100%;
+  width: 100%;
+
+}
+.modal-table-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+.modal-overlay {
+  width: 100%;
+  background: #fff;
+  margin: 0 auto;
+  box-shadow: 0 1px 10px #aaa;
+  border-radius: 4px;
+  padding: 35px 30px 20px 30px;
+}
+.modal-overlay.small {
+  max-width: 450px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  max-height: calc(100vh - 10px);
+  overflow: hidden;
+}
+
+.modal-header {
+  margin-bottom: 30px;
+}
+.modal-title {
+  font-size: 20px;
+}
+
+div.modal-form-inputs {
+  max-height: calc(100vh - 210px);
+  overflow-y: scroll;
+  overflow: auto;
+  margin-top: -10px;
+}
+
+div.modal-form-inputs input[type="text"] {
+  height: auto;
+  padding: 5px;
+  width: 95%;
+}
+
+div.modal-form-inputs label {
+  margin-top: 5px;
+  font-weight: lighter;
+}
+
+.button {
+  display: inline-block;
+  font-family: "Open Sans Semibold", sans-serif;
+  white-space: nowrap;
+  padding: 7px 10px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  outline: none;
+  outline: 0;
+  border-radius: 4px;
+  transition: background 0.4s ease;
+  font-size: 14px;
+}
+
+
+.button-default {
+  background: transparent;
+  border-color: #ddd;
+  color: #666666;
+}
+.button-default:hover {
+  border-color: #ccc;
+  color: #333;
+}
+.button-primary {
+  background: #0192dd;
+  color: #fff;
+}
+.button-primary:hover {
+  background: #1e82b9;
+}
+
+.button:disabled {
+  color: white;
+  border-color: gray;
+  background-color: gray;
+}
+
+.form-action {
+  padding-top: 20px;
+}
+.form-action .button:nth-child(2) {
+  margin-right: 10px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+#centered-toggle-button {
+  position: absolute;
+}
+
+/*******  MODAL  *******/

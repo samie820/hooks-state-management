@@ -1,11 +1,16 @@
 import React from "react";
 import { AuthContext } from "../App";
 import Card from "./Card";
+import AddSong from "./AddSong";
+
+export const SongContext = React.createContext();
 
 const initialState = {
   songs: [],
   isFetching: false,
-  hasError: false
+  hasError: false,
+  isSongSubmitting: false,
+  songHasError: false,
 };
 
 const reducer = (state, action) => {
@@ -28,6 +33,24 @@ const reducer = (state, action) => {
         hasError: true,
         isFetching: false
       };
+    case "ADD_SONG_REQUEST":
+      return {
+        ...state,
+        isSongSubmitting: true,
+        songHasError: false,
+      }
+    case "ADD_SONG_SUCCESS":
+      return {
+        ...state,
+        isSongSubmitting: false,
+        songs: [...state.songs, action.payload]
+      }
+    case "ADD_SONG_FAILURE":
+      return {
+        ...state,
+        isSongSubmitting: false,
+        songHasError: true,
+      }
     default:
       return state;
   }
@@ -36,6 +59,11 @@ const reducer = (state, action) => {
 export const Home = () => {
   const { state: authState } = React.useContext(AuthContext);
   const [state, dispatch] = React.useReducer(reducer, initialState);
+  const [isAddSongModalVisible, setAddSongModalVisibility] = React.useState(false);
+
+  const toggleAddSong = () => {
+    setAddSongModalVisibility(!isAddSongModalVisible);
+  }
 
   React.useEffect(() => {
     dispatch({
@@ -69,6 +97,14 @@ export const Home = () => {
   }, [authState.token]);
 
   return (
+    <React.Fragment>
+    <SongContext.Provider value={{
+      state,
+      dispatch
+    }}>
+      <button className="toggle-button" onClick={toggleAddSong}>ADD SONG</button>
+      <AddSong onClose={toggleAddSong} show={isAddSongModalVisible} />
+    </SongContext.Provider>
     <div className="home">
       {state.isFetching ? (
         <span className="loader">LOADING...</span>
@@ -83,6 +119,7 @@ export const Home = () => {
         </>
       )}
     </div>
+    </React.Fragment>
   );
 };
 
