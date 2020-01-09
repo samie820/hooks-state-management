@@ -39,8 +39,8 @@ function App() {
   const [state, dispatch] = React.useReducer(reducer, initialState);
 
   React.useEffect(() => {
-    const user = JSON.parse(localStorage.getItem('user'))
-    const token = JSON.parse(localStorage.getItem('token'))
+    const user = JSON.parse(localStorage.getItem('user') || null)
+    const token = JSON.parse(localStorage.getItem('token') || null)
 
     if(user && token){
       dispatch({
