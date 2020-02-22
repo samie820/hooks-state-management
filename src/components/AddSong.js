@@ -60,7 +60,7 @@ const AddSong = (props) => {
       return null;
     }
     return (
-      <div class="modal" id="modal">
+      <div className="modal" id="modal">
        <div className="modal-table-container">
         <div className="modal-table-cell">
          <div className="modal-overlay small">
