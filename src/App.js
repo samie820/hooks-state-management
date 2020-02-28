@@ -3,6 +3,7 @@ import "./App.css";
 import Login from "./components/Login";
 import Home from "./components/Home";
 import Header from "./components/Header";
+import { SongContext } from "./components/SongContext";
 
 export const AuthContext = React.createContext();
 
@@ -60,7 +61,11 @@ function App() {
       }}
     >
       <Header />
-      <div className="App">{!state.isAuthenticated ? <Login /> : <Home />}</div>
+      <div className="App">
+        {!state.isAuthenticated ?
+         <Login /> : 
+           <Home />
+         }</div>
     </AuthContext.Provider>
   );
 }

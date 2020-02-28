@@ -257,6 +257,27 @@ label{
   font-size: 2rem;
 }
 
+.content button {
+    border: none;
+    background: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.content button:hover {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.content #edit {
+  color: blue;
+}
+
+.content #delete {
+  color: darkred;
+}
+
 @media screen and (max-width: 780px){
 
   .home{
