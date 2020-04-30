@@ -1,5 +1,5 @@
 import React from "react";
-import { SongContext } from "./Home";
+import { SongContext } from "./SongContext";
 import { AuthContext } from "../App";
 
 const AddSong = (props) => {
@@ -134,6 +134,7 @@ const AddSong = (props) => {
         </div>
        </div>
       </div>
+    
     );
 };
 
